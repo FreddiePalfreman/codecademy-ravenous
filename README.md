@@ -68,3 +68,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# Styling
+As per the instructions on Codecademy, this uses [CSS modules](https://css-tricks.com/css-modules-part-1-need/) ([GitHub](https://github.com/css-modules/css-modules)) for styling.
+
+I have roughly followed the instructions [here](https://marcelwopperer.medium.com/how-to-use-bootstrap-in-your-react-app-using-css-modules-73fbc52de081) for using CSS modules with Bootstrap.
+
+I installed two packages for this: [classnames](https://www.npmjs.com/package/classnames) (where I need to apply >1 class name to an element) and [bootstrap](https://www.npmjs.com/package/bootstrap).
