@@ -2,38 +2,26 @@ import React from 'react';
 import globalStyles from '../bootstrap/bootstrap.min.module.css'
 import cx from 'classnames'
 
-const old_bar = {
-    'image': 'https://www.luu.org.uk/wp-content/uploads/2020/06/Old-Bar-Pool-Table.jpg',
-    'name': 'Old Bar',
-    'address': 'Leeds University Union, Lifton Place',
-    'city': 'Leeds',
-    'state': 'West Yorkshire',
-    'zipcode': 'LS2 9JZ',
-    'category': 'Bar',
-    'rating': 4.5,
-    'review_count': 100
-}
-
-const Business = () => {
+const Business = (props) => {
     return (
-        <div className={cx(globalStyles['col'])}>
+        <div className={cx(globalStyles['col-xl'])}>
             <div className={cx(globalStyles.card)}>
-                <img src={old_bar.image} alt={old_bar.name} className={cx(globalStyles['card-img-top'], globalStyles['img-fluid'])}/>
+                <img src={props.data.image} alt={props.data.name} className={cx(globalStyles['card-img-top'])}/>
                 <div className={globalStyles['card-body']}>
-                    <h3 className={globalStyles['card-title']}>{old_bar.name}</h3>
+                    <h3 className={globalStyles['card-title']}>{props.data.name}</h3>
                     <div className={globalStyles['row']}>
                         <div className={cx(globalStyles['col'], globalStyles['card-text'])}>
                             <p>
-                                {old_bar.address}<br />
-                                {old_bar.city}<br />
-                                {old_bar.state}<br />
-                                {old_bar.zipcode}
+                                {props.data.address}<br />
+                                {props.data.city}<br />
+                                {props.data.state}<br />
+                                {props.data.zipcode}
                             </p>
                         </div>
                         <div className={cx(globalStyles['col'], globalStyles['card-text'])}>
-                            <h4>{old_bar.category}</h4>
-                            <p>{old_bar.rating} stars</p>
-                            <p>{old_bar.review_count} reviews</p>
+                            <h4>{props.data.category}</h4>
+                            <p>{props.data.rating} stars</p>
+                            <p>{props.data.review_count} reviews</p>
                         </div>
                     </div>
                 </div>
@@ -42,13 +30,13 @@ const Business = () => {
     )
 }
 
-const BusinessList = () => {
+const BusinessList = (props) => {
     return (
         <div className={cx(globalStyles['mt-5'])}>
             <div className={cx(globalStyles.row)}>
-                <Business />
-                <Business />
-                <Business />
+                {props.data.map((business) => {
+                    return <Business data={business} />
+                })}
             </div>
         </div>
     )
