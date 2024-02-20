@@ -1,4 +1,3 @@
-import './App.css';
 import SearchBar from './components/SearchBar';
 import BusinessList from './components/Business';
 import globalStyles from './bootstrap/bootstrap.min.module.css'
