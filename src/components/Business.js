@@ -1,5 +1,5 @@
 import React from 'react';
-import globalStyles from '../bootstrap.min.module.css'
+import globalStyles from '../bootstrap/bootstrap.min.module.css'
 import cx from 'classnames'
 
 const old_bar = {
@@ -16,23 +16,25 @@ const old_bar = {
 
 const Business = () => {
     return (
-        <div className={cx(globalStyles.card, globalStyles['col-lg'])}>
-            <img src={old_bar.image} alt={old_bar.name} className={cx(globalStyles['card-img-top'], globalStyles['img-fluid'])}/>
-            <div className={globalStyles['card-body']}>
-                <h3 className={globalStyles['card-title']}>{old_bar.name}</h3>
-                <div className={globalStyles['row']}>
-                    <div className={cx(globalStyles['col'], globalStyles['card-text'])}>
-                        <p>
-                            {old_bar.address}<br />
-                            {old_bar.city}<br />
-                            {old_bar.state}<br />
-                            {old_bar.zipcode}
-                        </p>
-                    </div>
-                    <div className={cx(globalStyles['col'], globalStyles['card-text'])}>
-                        <h4>{old_bar.category}</h4>
-                        <p>{old_bar.rating} stars</p>
-                        <p>{old_bar.review_count} reviews</p>
+        <div className={cx(globalStyles['col'])}>
+            <div className={cx(globalStyles.card)}>
+                <img src={old_bar.image} alt={old_bar.name} className={cx(globalStyles['card-img-top'], globalStyles['img-fluid'])}/>
+                <div className={globalStyles['card-body']}>
+                    <h3 className={globalStyles['card-title']}>{old_bar.name}</h3>
+                    <div className={globalStyles['row']}>
+                        <div className={cx(globalStyles['col'], globalStyles['card-text'])}>
+                            <p>
+                                {old_bar.address}<br />
+                                {old_bar.city}<br />
+                                {old_bar.state}<br />
+                                {old_bar.zipcode}
+                            </p>
+                        </div>
+                        <div className={cx(globalStyles['col'], globalStyles['card-text'])}>
+                            <h4>{old_bar.category}</h4>
+                            <p>{old_bar.rating} stars</p>
+                            <p>{old_bar.review_count} reviews</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -42,10 +44,12 @@ const Business = () => {
 
 const BusinessList = () => {
     return (
-        <div className={cx(globalStyles.container, globalStyles.row, globalStyles['m-5'])}>
-            <Business />
-            <Business />
-            <Business />
+        <div className={cx(globalStyles['mt-5'])}>
+            <div className={cx(globalStyles.row)}>
+                <Business />
+                <Business />
+                <Business />
+            </div>
         </div>
     )
 }
