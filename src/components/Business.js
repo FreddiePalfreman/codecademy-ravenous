@@ -35,7 +35,7 @@ const BusinessList = (props) => {
         <div className={cx(globalStyles['mt-5'])}>
             <div className={cx(globalStyles.row)}>
                 {props.data.map((business) => {
-                    return <Business data={business} />
+                    return <Business data={business} key={business.id} />
                 })}
             </div>
         </div>

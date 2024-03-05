@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import globalStyles from "../bootstrap/bootstrap.min.module.css";
 import cx from "classnames";
 
-const SearchBar = () => {
+const SearchBar = ({ onSubmit }) => {
   const [term, setTerm] = useState("");
   const [location, setLocation] = useState("");
   const [sortBy, setSortBy] = useState("best_match");
@@ -19,7 +19,7 @@ const SearchBar = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(term, location, sortBy);
+    onSubmit(term, location, sortBy.toLowerCase().replace(" ", "_"));
   };
 
   return (
@@ -39,15 +39,15 @@ const SearchBar = () => {
           </h5>
         </div>
         <div className={globalStyles["col"]}>
-          <h5 className={cx(sortBy==="Highest Rated" ? globalStyles["text-primary"] : "")} 
+          <h5 className={cx(sortBy==="Rating" ? globalStyles["text-primary"] : "")} 
           onClick={handleSortByChange}>
-            Highest Rated
+            Rating
           </h5>
         </div>
         <div className={globalStyles["col"]}>
-          <h5 className={cx(sortBy==="Most Reviewed" ? globalStyles["text-primary"] : "")} 
+          <h5 className={cx(sortBy==="Review Count" ? globalStyles["text-primary"] : "")} 
           onClick={handleSortByChange}>
-            Most Reviewed
+            Review Count
           </h5>
         </div>
       </div>
