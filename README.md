@@ -75,3 +75,7 @@ As per the instructions on Codecademy, this uses [CSS modules](https://css-trick
 I have roughly followed the instructions [here](https://marcelwopperer.medium.com/how-to-use-bootstrap-in-your-react-app-using-css-modules-73fbc52de081) for using CSS modules with Bootstrap.
 
 I installed two packages for this: [classnames](https://www.npmjs.com/package/classnames) (where I need to apply >1 class name to an element) and [bootstrap](https://www.npmjs.com/package/bootstrap).
+
+# Troubleshooting
+- If the fetch() is failing, I probably need to renew access to the CORS proxy I used (https://cors-anywhere.herokuapp.com/)
+- Or, the Yelp API key may have stopped working (https://www.yelp.com/developers/v3/manage_app).
