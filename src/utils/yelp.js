@@ -1,4 +1,4 @@
-const apiKey = "hI2Evuv7iUDa-mW5BpIKPUBQ6_yRrZvKQCPtLPiAztgq3XxZ6hwwzVr9Udw1CQQYugpkaBHk02CKDzTs9QSdS5L_1KeBNGyDTnOQ3Awr5EIdBPYAIoSmM46-uj_nZXYx"
+const { apiKey } = require('../secrets/yelp_api.json');
 
 const getBusinesses = async (term, location, sortBy) => {
     const urlParams = `location=${location}&term=${term}&sort_by=${sortBy}&limit=10`
